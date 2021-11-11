@@ -1,14 +1,21 @@
-let names= [
-    { name: 'Ali', age: 21 },
-    { name: 'Ahmad', age: 20 },
-    { name: 'maryam', age: 20 }
+let names = [
+    {name: 'Ali', old: 21},
+    {name: 'Ahmad', old: 20},
+    {name: 'maryam', old: 20},
+    {name: 'zahra', old: 21},
+    {name: 'shima', old: 23},
 ];
-function sorting(names){
-    names.sort((a,b)=>{
-        return a.age-b.age;
-    }) ;
-    names.forEach((e)=>{
-        console.log(`${e.name} ${e.age}`);
-    });
+let age='old'
+function sorting(names) {
+    let x = {}
+    x =names.reduce(red,{})
+    return x
 }
-sorting(names)
+function red(prevVel,currentVel){
+    if(!prevVel[currentVel[age]]){
+        prevVel[currentVel[age]]=[currentVel]
+    }else
+        prevVel[currentVel[age]].push(currentVel)
+    return prevVel
+}
+console.log(sorting(names))
